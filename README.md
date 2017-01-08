@@ -37,7 +37,7 @@
 - killer instructions
   - command
     - `qa<commands>q` : record actions in the register a
-    - `@a` : replay the saved actions once in register a (same as `@@`)
+    - `@a` : replay the saved actions once (same as `@@`)
     - `<number>@@` : replay the saved actions N times
   - cursor
     - `f<letter>` : go to next occurrence of the letter
@@ -53,11 +53,11 @@
 
 ## git
 - semantic commits
-  - chore    : Changes to the build process or auxiliart tools and libraries sych as documentation generation
+  - chore    : Changes to the build process or auxiliary tools and libraries such as documentation generation
   - docs     : Documentation only changes
   - feat     : A new feature (CHANGE LOG)
   - fix      : A bug fix (CHANGE LOG)
-  - refactor : A code change that neigher fixes a bug or adds a feature
+  - refactor : A code change that neither fixes a bug or adds a feature
   - style    : Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
   - test     : Adding missing testing
 - ref
