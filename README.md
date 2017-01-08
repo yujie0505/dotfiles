@@ -33,16 +33,16 @@
     - `%`  : go to the corresponding (, {, [
     - `*`  : go to next occurrence of the word under cursor
     - `#`  : go to previous occurrence of the word under cursor
-    - `<Number>G` : go to line <Number>
+    - `<Number>G` : go to nth line
 - killer instructions
   - command
     - `qa<commands>q` : record actions in the register a
     - `@a` : replay the saved actions once in register a (same as `@@`)
-    - `<number>@@` : replay the saved actions <number> times
+    - `<number>@@` : replay the saved actions N times
   - cursor
     - `f<letter>` : go to next occurrence of the letter
     - `t<letter>` : go to just before the occurrence of the letter
-    - `<number><f/t><letter>` : go the <number> occurrence of <letter> on this line
+    - `<number><f/t><letter>` : go the nth occurrence of letter on this line
   - lines (selected block)
     - `J`  : join all lines together
     - `<`  : indent to the left
@@ -50,3 +50,15 @@
     - `=`  : auto indent
 - ref
   - http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/
+
+## git
+- semantic commits
+  - chore    : add Oyster build script
+  - docs     : explain hat wobble
+  - feat     : add beta sequence
+  - fix      : remove broken confirmation message
+  - refactor : share logic between 4d3d3d3 and flarhgunnstow
+  - style    : convert tabs to spaces
+  - test     : ensure Tayne retains clothing
+- ref
+  - https://seesparkbox.com/foundry/semantic_commit_messages
