@@ -1,1 +1,52 @@
 # cfg
+
+## vim
+- useful instructions
+  - cursor
+    - `0`  : go to the first column
+    - `$`  : go to the end of line
+    - `^`  : go to the first non-blank char of line
+    - `g_` : go to the last non-blank char of line
+  - delete
+    - `x`  : delete the char under cursor
+  - files
+    - `:saveas <path/to/file>` : save to `<path/to/file>`
+    - `:x` : save and quit
+    - `ZZ` : save and quit
+  - INSERT mode
+    - `i`  : insert before cursor
+    - `a`  : insert after cursor
+    - `cw` : replace from cursor to the end of the word
+- advanced instructions
+  - character
+    - `gU` : uppercase
+    - `gu` : lowercase
+  - command
+    - `.`  : repeat the last command
+    - `<Number><command>` : repeat the command N times
+    - `<start position><command><end position>`
+  - cursor
+    - `b`  : go to the start of the previous word
+    - `gE` : go to tht end of the previous word
+    - `w`  : go to the start of the following word
+    - `e`  : go to the end of this word
+    - `%`  : go to the corresponding (, {, [
+    - `*`  : go to next occurrence of the word under cursor
+    - `#`  : go to previous occurrence of the word under cursor
+    - `<Number>G` : go to line <Number>
+- killer instructions
+  - command
+    - `qa<commands>q` : record actions in the register a
+    - `@a` : replay the saved actions once in register a (same as `@@`)
+    - `<number>@@` : replay the saved actions <number> times
+  - cursor
+    - `f<letter>` : go to next occurrence of the letter
+    - `t<letter>` : go to just before the occurrence of the letter
+    - `<number><f/t><letter>` : go the <number> occurrence of <letter> on this line
+  - lines (selected block)
+    - `J`  : join all lines together
+    - `<`  : indent to the left
+    - `>`  : indent to the right
+    - `=`  : auto indent
+- ref
+  - http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/
