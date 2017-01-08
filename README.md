@@ -52,6 +52,10 @@
   - http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/
 
 ## git
+- CONFIG
+  - https://git-scm.com/docs/git-config
+- push
+  - `git push -u <remote name> <branch name>` : upload and track remote branch
 - semantic commits
   - chore    : Changes to the build process or auxiliary tools and libraries such as documentation generation
   - docs     : Documentation only changes
