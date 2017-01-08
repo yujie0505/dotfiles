@@ -53,12 +53,12 @@
 
 ## git
 - semantic commits
-  - chore    : add Oyster build script
-  - docs     : explain hat wobble
-  - feat     : add beta sequence
-  - fix      : remove broken confirmation message
-  - refactor : share logic between 4d3d3d3 and flarhgunnstow
-  - style    : convert tabs to spaces
-  - test     : ensure Tayne retains clothing
+  - chore    : Changes to the build process or auxiliart tools and libraries sych as documentation generation
+  - docs     : Documentation only changes
+  - feat     : A new feature (CHANGE LOG)
+  - fix      : A bug fix (CHANGE LOG)
+  - refactor : A code change that neigher fixes a bug or adds a feature
+  - style    : Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+  - test     : Adding missing testing
 - ref
-  - https://seesparkbox.com/foundry/semantic_commit_messages
+  - https://read01.com/Ay7dM.html
