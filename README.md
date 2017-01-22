@@ -64,18 +64,18 @@
   - `]c` : move to the next difference block
   - `[c` : move to the last difference block
 - merge
-  - `do` : (diff get) replace the content in this line with the corresponding one in compared file
-  - `dp` : (diff put) replace the content in this difference block with the corresponding one in compared file
+  - `do` : (diff get) replace this line with the corresponding one in compared file
+  - `dp` : (diff put) replace this difference block with the corresponding one in compared file
 - window
   - `Ctrl-w w` : switch to the other file 
   - `Ctrl-w K` : move the current window to top
   - `Ctrl-w H` : move the current window to left
   - `Ctrl-w J` : move the current window to bottom
   - `Ctrl-w L` : move the current window to right
-- misc
+- misc.
   - vim visual mode
-    - `:diffupdate` : update difference
-    - `:set diffopt=context:<number>` : change the lines of context of each difference block
+    - `:diffupdate` : update difference between files
+    - `:set diffopt=context:<number>` : change the number of lines of context in each difference block
 - ref
   - https://www.ibm.com/developerworks/cn/linux/l-vimdiff/
 
