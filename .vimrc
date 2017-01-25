@@ -13,7 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 "-----------------------Vundle plugins------------------------------
 
-"-- language
+"-- Language
 
 "---- CSS
 Plugin 'hail2u/vim-css3-syntax'
@@ -43,9 +43,20 @@ Plugin 'klen/python-mode'
 "---- Stylus
 Plugin 'wavded/vim-stylus'
 
-"-----------
+"--------------------------
 
-"--utility
+"-- Interface
+
+"---- colorscheme
+Plugin 'altercation/vim-colors-solarized'
+
+"---- statusline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+"--------------------------
+
+"-- utility
 
 "---- cursor line
 Plugin 'miyakogi/conoline.vim'
@@ -53,14 +64,10 @@ Plugin 'miyakogi/conoline.vim'
 "---- git diff
 Plugin 'airblade/vim-gitgutter'
  
-"---- tabbar
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
 "---- tabular
 Plugin 'godlygeek/tabular'
 
-"-----------
+"--------------------------
 
 " All of your Plugins must be added before the following line
 "-------------------------------------------------------------------
@@ -70,16 +77,33 @@ filetype plugin on  " required
 
 "------------------------plugins setting----------------------------
 
-"--conoline
-let g:conoline_auto_enable=1
-"--airline
-set laststatus=2                                    " set status line
+"-- airline
+
+function! AirlineInit()
+    let g:airline_section_a=airline#section#create(['mode', ' ', 'branch'])
+    let g:airline_section_b=airline#section#create_left(['ffenc', 'hunks', '%f'])
+    let g:airline_section_c=airline#section#create(['filetype'])
+    let g:airline_section_x=airline#section#create(['%P'])
+    let g:airline_section_y=airline#section#create(['%B'])
+    let g:airline_section_z=airline#section#create_right(['%l', '%c'])
+endfunction
+autocmd VimEnter * call AirlineInit()
 let g:airline_powerline_fonts=1                     " enable powerline fonts
+let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled=1          " enable tabline
 let g:airline#extensions#tabline#left_sep=' '       " set left separator
 let g:airline#extensions#tabline#left_alt_sep='|'   " set left separator which are not editing
-let g:airline#extensions#tabline#buffer_nr_show=1   " show buffer number
-let g:airline_theme='tomorrow'
+set laststatus=2                                    " set status line
+
+"-- conoline
+let g:conoline_auto_enable=1
+
+"-- vim-colors-solarized
+colorscheme solarized
+let g:solarized_contrast='low'
+let g:solarized_termcolors=256
+set background=dark
+syntax enable
 
 "------------------------general setting----------------------------
 
@@ -125,11 +149,5 @@ nnoremap <silent> +	:wincmd +<CR>
 nnoremap <silent> -	:wincmd -<CR>
 nnoremap <silent> <	:wincmd <<CR>
 nnoremap <silent> >	:wincmd ><CR>
-
-
-"-------------------------color setting-----------------------------
-set t_Co=256
-colorscheme desert
-hi Comment ctermfg=Red
 
 " vi:sw=4:ts=4
