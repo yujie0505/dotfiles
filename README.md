@@ -32,7 +32,7 @@
     - `gE` : go to tht end of the previous word
     - `w`  : go to the start of the following word
     - `e`  : go to the end of this word
-    - `%`  : go to the corresponding (, {, [
+    - `%`  : go to the corresponding \(, \{, \[
     - `*`  : go to next occurrence of the word under cursor
     - `#`  : go to previous occurrence of the word under cursor
     - `<Number>G` : go to nth line
