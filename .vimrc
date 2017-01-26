@@ -77,22 +77,15 @@ filetype plugin on  " required
 
 "------------------------plugins setting----------------------------
 
-"-- airline
-
-function! AirlineInit()
-    let g:airline_section_a=airline#section#create(['mode', ' ', 'branch'])
-    let g:airline_section_b=airline#section#create_left(['ffenc', 'hunks', '%f'])
-    let g:airline_section_c=airline#section#create(['filetype'])
-    let g:airline_section_x=airline#section#create(['%P'])
-    let g:airline_section_y=airline#section#create(['%B'])
-    let g:airline_section_z=airline#section#create_right(['%l', '%c'])
-endfunction
-autocmd VimEnter * call AirlineInit()
+"-- vim-airline
 let g:airline_powerline_fonts=1                     " enable powerline fonts
+let g:airline_section_b='%{getcwd()}'
+let g:airline_section_c='%t'
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled=1          " enable tabline
 let g:airline#extensions#tabline#left_sep=' '       " set left separator
 let g:airline#extensions#tabline#left_alt_sep='|'   " set left separator which are not editing
+let g:airline#extensions#whitespace#enabled=0
 set laststatus=2                                    " set status line
 
 "-- conoline
@@ -149,5 +142,3 @@ nnoremap <silent> +	:wincmd +<CR>
 nnoremap <silent> -	:wincmd -<CR>
 nnoremap <silent> <	:wincmd <<CR>
 nnoremap <silent> >	:wincmd ><CR>
-
-" vi:sw=4:ts=4
