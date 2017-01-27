@@ -33,7 +33,7 @@ Plugin 'gkz/vim-ls'
 
 "---- Perl
 Plugin 'vim-perl/vim-perl'
- 
+
 "---- Pug
 Plugin 'digitaltoad/vim-jade'
 
@@ -109,37 +109,25 @@ syntax enable
 
 "------------------------general setting----------------------------
 
-"-- search highlight
-if filereadable($VIMRUNTIME . "/vimrc_example.vim")
- so $VIMRUNTIME/vimrc_example.vim
-endif
-
 syntax on
-set expandtab
-set smarttab
-set nowrap
-set wildmenu
-set backupdir=~/tmp,.,/var/tmp/vi,/tmp
-set directory=~/tmp,/var/tmp/vi,/tmp,.
-set nobackup		                        " keep a backup file
-set tabstop=2
-set shiftwidth=2
-set bs=2		                            " allow backspacing over everything in insert mode
-set ai			                            " always set autoindenting on
-set viminfo='20,\"50	                    " read/write a .viminfo file, don't store more
-set showmatch
-set noundofile
+set ai                                 " autoindent
+set autochdir                          " automatically switch to the directory of this file
+set backspace=2                        " allow backspacing in insert mode
 set cursorline
-set nohlsearch
-set foldmethod=marker
-set foldlevel=1
+set directory=~/tmp//
 set encoding=utf-8
+set expandtab                          " use space to represent tab
 set fileencodings=utf-8,ucs-bom,latin1
+set incsearch                          " show result while searching
+set nobackup
+set noundofile
+set shiftwidth=2
+set showmatch
+set smarttab
+set tabstop=2
 set termencoding=utf-8
-
-"--Diff
-nnoremap <silent> <C-G>	:diffget<CR>
-nnoremap <silent> <C-P>	:diffput<CR>
+set wildmenu                           " show command menu as using tab
+autocmd BufWritePre * :%s/\s\+$//e     " remove the extra space in the end of each line
 
 "--Window
 nnoremap <silent> <Tab>	:wincmd w<CR>
