@@ -50,32 +50,36 @@ Plugin 'wavded/vim-stylus'
 "---- colorscheme
 Plugin 'altercation/vim-colors-solarized'
 
+"---- cursor
+Plugin 'miyakogi/conoline.vim'
+
+"---- git diff
+Plugin 'airblade/vim-gitgutter'
+
 "---- statusline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 "--------------------------
 
-"-- utility
+"-- Others
 
-"---- cursor line
-Plugin 'miyakogi/conoline.vim'
-
-"---- git diff
-Plugin 'airblade/vim-gitgutter'
- 
-"---- tabular
+"---- aligning text
 Plugin 'godlygeek/tabular'
 
 "--------------------------
 
 " All of your Plugins must be added before the following line
+
 "-------------------------------------------------------------------
 
 call vundle#end()   " required
 filetype plugin on  " required
 
 "------------------------plugins setting----------------------------
+
+"-- conoline
+let g:conoline_auto_enable=1
 
 "-- vim-airline
 let g:airline_powerline_fonts=1                     " enable powerline fonts
@@ -88,9 +92,6 @@ let g:airline#extensions#tabline#left_alt_sep='|'   " set left separator which a
 let g:airline#extensions#whitespace#enabled=0
 set laststatus=2                                    " set status line
 
-"-- conoline
-let g:conoline_auto_enable=1
-
 "-- vim-colors-solarized
 colorscheme solarized
 let g:solarized_contrast='low'
@@ -100,7 +101,7 @@ syntax enable
 
 "------------------------general setting----------------------------
 
-"--search highlight
+"-- search highlight
 if filereadable($VIMRUNTIME . "/vimrc_example.vim")
  so $VIMRUNTIME/vimrc_example.vim
 endif
