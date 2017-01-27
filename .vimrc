@@ -53,10 +53,14 @@ Plugin 'altercation/vim-colors-solarized'
 "---- cursor
 Plugin 'miyakogi/conoline.vim'
 
+"---- file system
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
 "---- git diff
 Plugin 'airblade/vim-gitgutter'
 
-"---- statusline
+"---- status line
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -80,6 +84,10 @@ filetype plugin on  " required
 
 "-- conoline
 let g:conoline_auto_enable=1
+
+"-- nerdtree
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "-- vim-airline
 let g:airline_powerline_fonts=1                     " enable powerline fonts
@@ -143,3 +151,18 @@ nnoremap <silent> +	:wincmd +<CR>
 nnoremap <silent> -	:wincmd -<CR>
 nnoremap <silent> <	:wincmd <<CR>
 nnoremap <silent> >	:wincmd ><CR>
+
+"-- NERDTree file highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+  exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('html', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('js', 'Magenta', 'none', '#ff00ff', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('ls', 'Magenta', 'none', '#ff00ff', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('pug', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
