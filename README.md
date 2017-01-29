@@ -51,7 +51,7 @@
     - `>`  : indent to the right
     - `=`  : auto indent
 - ref
-  - http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/
+  - [Learn Vim Progressively](http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/)
 
 ### vimdiff
 - launch
@@ -77,14 +77,14 @@
     - `:diffupdate` : update difference between files
     - `:set diffopt=context:<number>` : change the number of lines of context in each difference block
 - ref
-  - https://www.ibm.com/developerworks/cn/linux/l-vimdiff/
+  - [using vimdiff](https://www.ibm.com/developerworks/cn/linux/l-vimdiff/)
 
-### misc.
+### Issue
 - [vim is not remembering last position](http://askubuntu.com/questions/223018/vim-is-not-remembering-last-position/224908#224908)
 
 ## git
 - CONFIG
-  - https://git-scm.com/docs/git-config
+  - [Git - git-config Documentation](https://git-scm.com/docs/git-config)
 - push
   - `git push -u <remote name> <branch name>` : upload and track remote branch
 - semantic commits
@@ -96,4 +96,4 @@
   - style    : Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
   - test     : Adding missing testing
 - ref
-  - https://read01.com/Ay7dM.html
+  - [semantic git commit message](https://read01.com/Ay7dM.html)
