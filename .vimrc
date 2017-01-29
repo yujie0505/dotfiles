@@ -125,7 +125,7 @@ set shiftwidth=2
 set smarttab
 set tabstop=2
 set termencoding=utf-8
-set viminfo=\"50,'20,n~/.vim/cache/.viminfo " lines saved each register; files marks saved
+set viminfo=\"50,'20,n~/.vim/cache/.viminfo
 set wildmenu                                " show command menu as using tab
 autocmd BufWritePre * :%s/\s\+$//e          " remove the extra space in the end of each line
 
