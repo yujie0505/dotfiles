@@ -59,7 +59,7 @@
     - `vimdiff [file_left] [file_right]`
     - `vim -d [file_left] [file_right]`
   - vim visual mode
-    - `:vertical diffsplit [file_left]` 
+    - `:vertical diffsplit [file_left]`
 - cursor
   - `]c` : move to the next difference block
   - `[c` : move to the last difference block
@@ -67,7 +67,7 @@
   - `do` : (diff get) replace this line with the corresponding one in compared file
   - `dp` : (diff put) replace this difference block with the corresponding one in compared file
 - window
-  - `Ctrl-w w` : switch to the other file 
+  - `Ctrl-w w` : switch to the other file
   - `Ctrl-w K` : move the current window to top
   - `Ctrl-w H` : move the current window to left
   - `Ctrl-w J` : move the current window to bottom
@@ -78,6 +78,9 @@
     - `:set diffopt=context:<number>` : change the number of lines of context in each difference block
 - ref
   - https://www.ibm.com/developerworks/cn/linux/l-vimdiff/
+
+### misc.
+- [vim is not remembering last position](http://askubuntu.com/questions/223018/vim-is-not-remembering-last-position/224908#224908)
 
 ## git
 - CONFIG
