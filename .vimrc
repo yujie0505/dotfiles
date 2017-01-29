@@ -95,8 +95,8 @@ let g:airline_section_b='%{getcwd()}'
 let g:airline_section_c='%t'
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled=1          " enable tabline
-let g:airline#extensions#tabline#left_sep=' '       " set left separator
 let g:airline#extensions#tabline#left_alt_sep='|'   " set left separator which are not editing
+let g:airline#extensions#tabline#left_sep=' '       " set left separator
 let g:airline#extensions#whitespace#enabled=0
 set laststatus=2                                    " set status line
 
@@ -110,24 +110,24 @@ syntax enable
 "------------------------general setting----------------------------
 
 syntax on
-set ai                                 " autoindent
-set autochdir                          " automatically switch to the directory of this file
-set backspace=2                        " allow backspacing in insert mode
+set ai                                      " autoindent
+set autochdir                               " automatically switch to the directory of this file
+set backspace=2                             " allow backspacing in insert mode
 set cursorline
 set directory=~/tmp//
 set encoding=utf-8
-set expandtab                          " use space to represent tab
+set expandtab                               " use space to represent tab
 set fileencodings=utf-8,ucs-bom,latin1
-set incsearch                          " show result while searching
+set incsearch                               " show result while searching
 set nobackup
 set noundofile
 set shiftwidth=2
-set showmatch
 set smarttab
 set tabstop=2
 set termencoding=utf-8
-set wildmenu                           " show command menu as using tab
-autocmd BufWritePre * :%s/\s\+$//e     " remove the extra space in the end of each line
+set viminfo=\"50,'20,n~/.vim/cache/.viminfo " lines saved each register; files marks saved
+set wildmenu                                " show command menu as using tab
+autocmd BufWritePre * :%s/\s\+$//e          " remove the extra space in the end of each line
 
 "--Window
 nnoremap <silent> <Tab>	:wincmd w<CR>
