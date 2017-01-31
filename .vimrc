@@ -98,7 +98,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 "-- vim-airline
 let g:airline_powerline_fonts=1                     " enable powerline fonts
-let g:airline_section_b='%{getcwd()}'
 let g:airline_section_c='%t'
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled=1          " enable tabline
