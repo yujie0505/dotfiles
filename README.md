@@ -64,8 +64,8 @@
   - `]c` : move to the next difference block
   - `[c` : move to the last difference block
 - merge
-  - `do` : (diff get) replace this line with the corresponding one in compared file
-  - `dp` : (diff put) replace this difference block with the corresponding one in compared file
+  - `do` : (diff get) get difference from compared file
+  - `dp` : (diff put) put difference to compared file
 - window
   - `Ctrl-w w` : switch to the other file
   - `Ctrl-w K` : move the current window to top
