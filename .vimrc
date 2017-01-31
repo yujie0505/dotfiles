@@ -66,6 +66,13 @@ Plugin 'vim-airline/vim-airline-themes'
 
 "--------------------------
 
+"-- Integrations
+
+"---- git wrapper
+Plugin 'tpope/vim-fugitive'
+
+"--------------------------
+
 "-- Others
 
 "---- aligning text
