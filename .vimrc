@@ -127,6 +127,7 @@ set fileencodings=utf-8,ucs-bom,latin1
 set incsearch                               " show result while searching
 set nobackup
 set noundofile
+set nowrap
 set shiftwidth=2
 set smarttab
 set tabstop=2
