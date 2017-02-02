@@ -67,11 +67,11 @@
   - `do` : (diff get) get difference from compared file
   - `dp` : (diff put) put difference to compared file
 - window
-  - `Ctrl-w w` : switch to the other file
-  - `Ctrl-w K` : move the current window to top
-  - `Ctrl-w H` : move the current window to left
-  - `Ctrl-w J` : move the current window to bottom
-  - `Ctrl-w L` : move the current window to right
+  - `Ctrl-w w` : switch to the other buffer
+  - `Ctrl-w k` : move the current window to top
+  - `Ctrl-w h` : move the current window to left
+  - `Ctrl-w j` : move the current window to bottom
+  - `Ctrl-w l` : move the current window to right
 - misc.
   - vim visual mode
     - `:diffupdate` : update difference between files
