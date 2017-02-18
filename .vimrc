@@ -31,6 +31,9 @@ Plugin 'mxw/vim-jsx'
 "---- LiveScript
 Plugin 'gkz/vim-ls'
 
+"---- Markdown
+Plugin 'plasticboy/vim-markdown'
+
 "---- Perl
 Plugin 'vim-perl/vim-perl'
 
@@ -112,6 +115,9 @@ let g:solarized_contrast='low'
 let g:solarized_termcolors=256
 set background=dark
 syntax enable
+
+"-- vim-markdown
+let g:vim_markdown_folding_disabled = 1
 
 "------------------------general setting----------------------------
 
