@@ -122,6 +122,7 @@ let g:vim_markdown_folding_disabled = 1
 "------------------------general setting----------------------------
 
 syntax on
+hi Comment ctermfg=033
 set ai                                      " autoindent
 set autochdir                               " automatically switch to the directory of this file
 set backspace=2                             " allow backspacing in insert mode
