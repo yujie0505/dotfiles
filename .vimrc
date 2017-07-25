@@ -43,8 +43,14 @@ Plugin 'digitaltoad/vim-jade'
 "---- Python
 Plugin 'klen/python-mode'
 
+"---- Sass
+Plugin 'tpope/vim-haml'
+
 "---- Stylus
 Plugin 'wavded/vim-stylus'
+
+"---- Vue
+Plugin 'posva/vim-vue'
 
 "--------------------------
 
