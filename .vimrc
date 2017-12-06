@@ -41,7 +41,8 @@ Plugin 'vim-perl/vim-perl'
 Plugin 'digitaltoad/vim-jade'
 
 "---- Python
-Plugin 'klen/python-mode'
+Plugin 'hdima/python-syntax'
+Plugin 'hynek/vim-python-pep8-indent'
 
 "---- Sass
 Plugin 'tpope/vim-haml'
@@ -105,8 +106,11 @@ let g:conoline_auto_enable=1
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+"-- python-syntax
+let python_highlight_all = 1
+
 "-- vim-airline
-let g:airline_powerline_fonts=1                     " enable powerline fonts
+" let g:airline_powerline_fonts=1                     " enable powerline fonts
 let g:airline_section_c='%t'
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled=1          " enable tabline
