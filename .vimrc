@@ -22,11 +22,7 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'othree/html5.vim'
 
 "---- JavaScript
-Plugin 'othree/es.next.syntax.vim'
-Plugin 'othree/yajs.vim'
-
-"---- JSX
-Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
 
 "---- LiveScript
 Plugin 'gkz/vim-ls'
@@ -50,9 +46,6 @@ Plugin 'tpope/vim-haml'
 "---- Stylus
 Plugin 'wavded/vim-stylus'
 
-"---- Vue
-Plugin 'posva/vim-vue'
-
 "--------------------------
 
 "-- Interface
@@ -63,23 +56,12 @@ Plugin 'altercation/vim-colors-solarized'
 "---- cursor
 Plugin 'miyakogi/conoline.vim'
 
-"---- file system
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-
 "---- git diff
 Plugin 'airblade/vim-gitgutter'
 
 "---- status line
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
-"--------------------------
-
-"-- Integrations
-
-"---- git wrapper
-Plugin 'tpope/vim-fugitive'
 
 "--------------------------
 
@@ -101,10 +83,6 @@ filetype plugin on  " required
 
 "-- conoline
 let g:conoline_auto_enable=1
-
-"-- nerdtree
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "-- python-syntax
 let python_highlight_all = 1
@@ -133,6 +111,7 @@ let g:vim_markdown_folding_disabled = 1
 
 syntax on
 hi Comment ctermfg=033
+hi def link jsObjectKey Label
 set ai                                      " autoindent
 set autochdir                               " automatically switch to the directory of this file
 set backspace=2                             " allow backspacing in insert mode
@@ -164,17 +143,18 @@ nnoremap <silent> -	:wincmd -<CR>
 nnoremap <silent> <	:wincmd <<CR>
 nnoremap <silent> >	:wincmd ><CR>
 
-"-- NERDTree file highlighting
-function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-  exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-  exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
+"----------------------vue syntax highlight-------------------------
 
-call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('html', 'green', 'none', 'green', '#151515')
-call NERDTreeHighlightFile('js', 'Magenta', 'none', '#ff00ff', '#151515')
-call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('ls', 'Magenta', 'none', '#ff00ff', '#151515')
-call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
-call NERDTreeHighlightFile('pug', 'green', 'none', 'green', '#151515')
-call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+autocmd BufNewFile,BufEnter *.vue setfiletype vue
+autocmd FileType vue setlocal autoindent expandtab shiftwidth=2 softtabstop=2 commentstring=//\ %s comments=://
+\ | syntax include @PUG syntax/pug.vim | unlet b:current_syntax
+\ | syntax include @JS syntax/javascript.vim | unlet b:current_syntax
+\ | syntax include @SASS syntax/sass.vim | unlet b:current_syntax
+\ | syntax region vueTemplate matchgroup=vueTag start=/^<template.*>$/ end='</template>' contains=@PUG keepend
+\ | syntax region vueScript matchgroup=vueTag start=/^<script.*>$/ end='</script>' contains=@JS keepend
+\ | syntax region vueStyle matchgroup=vueTag start=/^<style.*>$/ end='</style>' contains=@SASS keepend
+\ | syntax match htmlArg /v-text\|v-html\|v-if\|v-show\|v-else\|v-for\|v-on\|v-bind\|v-model\|v-pre\|v-cloak\|v-once/ contained
+\ | syntax keyword htmlArg contained key ref slot
+\ | syntax keyword htmlTagName contained component transition transition-group keep-alive slot
+\ | syntax sync fromstart
+highlight vueTag ctermfg=Blue
