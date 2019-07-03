@@ -43,6 +43,9 @@ Plugin 'hynek/vim-python-pep8-indent'
 "---- Sass
 Plugin 'tpope/vim-haml'
 
+"---- Solidity
+Plugin 'tomlion/vim-solidity'
+
 "---- Stylus
 Plugin 'wavded/vim-stylus'
 
