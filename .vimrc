@@ -18,6 +18,9 @@ Plugin 'VundleVim/Vundle.vim'
 "---- CSS
 Plugin 'hail2u/vim-css3-syntax'
 
+"---- Golang
+Plugin 'fatih/vim-go'
+
 "---- HTML
 Plugin 'othree/html5.vim'
 
