@@ -173,9 +173,5 @@ highlight vueTag ctermfg=Blue
 
 "----------------------memo list highlight-------------------------
 
-fun! SetMemo()
-  syn match Memos /\%(MEMO:\)/
-  hi link Memos Todo
-endfu
-autocmd bufenter * :call SetMemo()
-autocmd filetype * :call SetMemo()
+autocmd Syntax * syn match Memo /\v<(MEMO):/ containedin=.*Comment,vimCommentTitle
+highlight Memo ctermbg=yellow ctermfg=darkblue
