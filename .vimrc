@@ -73,6 +73,9 @@ Plugin 'vim-airline/vim-airline-themes'
 
 "-- Others
 
+"---- ack
+Plugin 'mileszs/ack.vim'
+
 "---- aligning text
 Plugin 'godlygeek/tabular'
 
@@ -87,14 +90,17 @@ filetype plugin on  " required
 
 "------------------------plugins setting----------------------------
 
+"---- ack
+let g:ackprg='ag --vimgrep'
+
 "-- conoline
 let g:conoline_auto_enable=1
 
 "-- python-syntax
-let python_highlight_all = 1
+let python_highlight_all=1
 
 "-- vim-airline
-" let g:airline_powerline_fonts=1                     " enable powerline fonts
+let g:airline_powerline_fonts=1                     " enable powerline fonts
 let g:airline_section_c='%t'
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled=1          " enable tabline
@@ -104,7 +110,7 @@ let g:airline#extensions#whitespace#enabled=0
 set laststatus=2                                    " set status line
 
 "-- vim-colors-solarized
-colorscheme solarized
+colorscheme darkblue
 let g:solarized_contrast='low'
 let g:solarized_termcolors=256
 set background=dark
@@ -164,3 +170,12 @@ autocmd FileType vue setlocal autoindent expandtab shiftwidth=2 softtabstop=2 co
 \ | syntax keyword htmlTagName contained component transition transition-group keep-alive slot
 \ | syntax sync fromstart
 highlight vueTag ctermfg=Blue
+
+"----------------------memo list highlight-------------------------
+
+fun! SetMemo()
+  syn match Memos /\%(MEMO:\)/
+  hi link Memos Todo
+endfu
+autocmd bufenter * :call SetMemo()
+autocmd filetype * :call SetMemo()
