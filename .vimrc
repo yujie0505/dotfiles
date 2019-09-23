@@ -33,6 +33,9 @@ Plugin 'gkz/vim-ls'
 "---- Markdown
 Plugin 'plasticboy/vim-markdown'
 
+"---- Nodejs
+Plugin 'moll/vim-node'
+
 "---- Perl
 Plugin 'vim-perl/vim-perl'
 
