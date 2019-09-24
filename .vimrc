@@ -176,5 +176,5 @@ highlight vueTag ctermfg=Blue
 
 "----------------------memo list highlight-------------------------
 
-autocmd Syntax * syn match Memo /\v<(MEMO):/ containedin=.*Comment,vimCommentTitle
+autocmd Syntax * syn match Memo /\v<(MEMO)/ containedin=.*Comment,vimCommentTitle
 highlight Memo ctermbg=yellow ctermfg=darkblue
