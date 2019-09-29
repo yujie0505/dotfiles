@@ -55,6 +55,9 @@ Plugin 'tomlion/vim-solidity'
 "---- Stylus
 Plugin 'wavded/vim-stylus'
 
+"---- TypeScript
+Plugin 'leafgarland/typescript-vim'
+
 "--------------------------
 
 "-- Interface
