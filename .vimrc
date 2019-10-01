@@ -167,10 +167,14 @@ autocmd BufNewFile,BufEnter *.vue setfiletype vue
 autocmd FileType vue setlocal autoindent expandtab shiftwidth=2 softtabstop=2 commentstring=//\ %s comments=://
 \ | syntax include @PUG syntax/pug.vim | unlet b:current_syntax
 \ | syntax include @JS syntax/javascript.vim | unlet b:current_syntax
+\ | syntax include @TS syntax/typescript.vim | unlet b:current_syntax
 \ | syntax include @SASS syntax/sass.vim | unlet b:current_syntax
-\ | syntax region vueTemplate matchgroup=vueTag start=/^<template.*>$/ end='</template>' contains=@PUG keepend
+\ | syntax include @SCSS syntax/css.vim | unlet b:current_syntax
+\ | syntax region vuePUGTemplate matchgroup=vueTag start=/^<template.*pug.*>$/ end='</template>' contains=@PUG keepend
 \ | syntax region vueScript matchgroup=vueTag start=/^<script.*>$/ end='</script>' contains=@JS keepend
-\ | syntax region vueStyle matchgroup=vueTag start=/^<style.*>$/ end='</style>' contains=@SASS keepend
+\ | syntax region vueTSScript matchgroup=vueTag start=/^<script.*ts.*>$/ end='</script>' contains=@TS keepend
+\ | syntax region vueSassStyle matchgroup=vueTag start=/^<style.*sass.*>$/ end='</style>' contains=@SASS keepend
+\ | syntax region vueScssStyle matchgroup=vueTag start=/^<style.*scss.*>$/ end='</style>' contains=@SCSS keepend
 \ | syntax match htmlArg /v-text\|v-html\|v-if\|v-show\|v-else\|v-for\|v-on\|v-bind\|v-model\|v-pre\|v-cloak\|v-once/ contained
 \ | syntax keyword htmlArg contained key ref slot
 \ | syntax keyword htmlTagName contained component transition transition-group keep-alive slot
