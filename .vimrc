@@ -85,6 +85,9 @@ Plugin 'mileszs/ack.vim'
 "---- aligning text
 Plugin 'godlygeek/tabular'
 
+"---- Prettier (https://github.com/prettier/vim-prettier)
+Plugin 'prettier/vim-prettier'
+
 "--------------------------
 
 " All of your Plugins must be added before the following line
