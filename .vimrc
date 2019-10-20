@@ -85,8 +85,8 @@ Plugin 'mileszs/ack.vim'
 "---- aligning text
 Plugin 'godlygeek/tabular'
 
-"---- Prettier (https://github.com/prettier/vim-prettier)
-Plugin 'prettier/vim-prettier'
+"---- language server protocol (https://github.com/neoclide/coc.nvim)
+Plugin 'neoclide/coc.nvim'
 
 "--------------------------
 
@@ -101,6 +101,9 @@ filetype plugin on  " required
 
 "---- ack
 let g:ackprg='ag --vimgrep'
+
+"-- coc-prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 "-- conoline
 let g:conoline_auto_enable=1
