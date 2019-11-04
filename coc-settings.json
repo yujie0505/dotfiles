@@ -1,0 +1,8 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": ["css", "js", "ts"],
+  "diagnostic.enable": false,
+  "prettier.printWidth": 120,
+  "prettier.trailingComma": "all",
+  "suggest.autoTrigger": "none",
+  "vetur.format.defaultFormatter.html": "prettier"
+}
