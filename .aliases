@@ -1,0 +1,27 @@
+alias cls='clear'
+alias cp='cp -i'
+alias du='du -h --max-depth=1'
+alias mv='mv -i'
+alias rm='_rm'
+alias rrm='/bin/rm -i'
+alias tls='tmux ls'
+alias tx='tmux attach'
+alias txn='tmux new -s'
+alias vi='vim'
+alias yarnb='yarn build'
+alias yarns='yarn start'
+alias yarnw='yarn watch'
+
+cd() { builtin cd "$@"; ls --color; }
+
+# Helper function
+
+function _rm() {
+while [ $# -ge 1 ]; do
+	mv -f "$1" $HOME/tmp
+	echo "$1 deleted."
+	shift
+done
+}
+
+# vi:syn=sh
