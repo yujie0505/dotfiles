@@ -1,6 +1,7 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "js", "ts"],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "typescript"],
   "diagnostic.enable": false,
+  "prettier.arrowParens": "always",
   "prettier.printWidth": 120,
   "prettier.trailingComma": "all",
   "suggest.autoTrigger": "none",
