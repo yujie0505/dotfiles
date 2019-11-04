@@ -12,7 +12,11 @@ alias yarnb='yarn build'
 alias yarns='yarn start'
 alias yarnw='yarn watch'
 
-cd() { builtin cd "$@"; ls --color; }
+cd() { builtin cd "$@"; ls; }
+
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ....="cd ../../../"
 
 # Helper function
 
