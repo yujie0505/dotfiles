@@ -3,7 +3,6 @@ alias cp='cp -i'
 alias du='du -h --max-depth=1'
 alias mv='mv -i'
 alias rm='_rm'
-alias rrm='/bin/rm -i'
 alias tls='tmux ls'
 alias tx='tmux attach'
 alias txn='tmux new -s'
@@ -17,6 +16,8 @@ cd() { builtin cd "$@"; ls; }
 alias ..="cd ../"
 alias ...="cd ../../"
 alias ....="cd ../../../"
+
+rrm() { /bin/rm -i "$@"; }
 
 # Helper function
 
