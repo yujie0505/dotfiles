@@ -1,9 +1,10 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "typescript"],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "json", "typescript"],
   "diagnostic.enable": false,
   "prettier.arrowParens": "always",
   "prettier.printWidth": 120,
   "prettier.trailingComma": "all",
+  "prettier.tslintIntegration": true,
   "suggest.autoTrigger": "none",
   "vetur.format.defaultFormatter.html": "prettier"
 }
