@@ -1,7 +1,7 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "json", "typescript"],
-  "diagnostic.enable": false,
+  "coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "json", "typescript", "vue"],
   "prettier.arrowParens": "always",
+  "prettier.disableLanguages": [],
   "prettier.printWidth": 120,
   "prettier.trailingComma": "all",
   "prettier.tslintIntegration": true,
