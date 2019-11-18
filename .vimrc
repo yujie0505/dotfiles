@@ -171,11 +171,13 @@ nnoremap <silent> >	:wincmd ><CR>
 
 autocmd BufNewFile,BufEnter *.vue setfiletype vue
 autocmd FileType vue setlocal autoindent expandtab shiftwidth=2 softtabstop=2 commentstring=//\ %s comments=://
+\ | syntax include @HTML syntax/html.vim | unlet b:current_syntax
 \ | syntax include @PUG syntax/pug.vim | unlet b:current_syntax
 \ | syntax include @JS syntax/javascript.vim | unlet b:current_syntax
 \ | syntax include @TS syntax/typescript.vim | unlet b:current_syntax
 \ | syntax include @SASS syntax/sass.vim | unlet b:current_syntax
 \ | syntax include @SCSS syntax/css.vim | unlet b:current_syntax
+\ | syntax region vueHTMLTemplate matchgroup=vueTag start=/^<template>$/ end='</template>' contains=@HTML keepend
 \ | syntax region vuePUGTemplate matchgroup=vueTag start=/^<template.*pug.*>$/ end='</template>' contains=@PUG keepend
 \ | syntax region vueScript matchgroup=vueTag start=/^<script.*>$/ end='</script>' contains=@JS keepend
 \ | syntax region vueTSScript matchgroup=vueTag start=/^<script.*ts.*>$/ end='</script>' contains=@TS keepend
