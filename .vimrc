@@ -18,6 +18,9 @@ Plugin 'VundleVim/Vundle.vim'
 "---- CSS
 Plugin 'hail2u/vim-css3-syntax'
 
+"---- Docker
+Plugin 'ekalinin/dockerfile.vim'
+
 "---- Golang
 Plugin 'fatih/vim-go'
 
@@ -177,7 +180,7 @@ autocmd FileType vue setlocal autoindent expandtab shiftwidth=2 softtabstop=2 co
 \ | syntax include @TS syntax/typescript.vim | unlet b:current_syntax
 \ | syntax include @SASS syntax/sass.vim | unlet b:current_syntax
 \ | syntax include @SCSS syntax/css.vim | unlet b:current_syntax
-\ | syntax region vueHTMLTemplate matchgroup=vueTag start=/^<template>$/ end='</template>' contains=@HTML keepend
+\ | syntax region vueHTMLTemplate matchgroup=vueTag start=/^<template>$/ end=/^<\/template>$/ contains=@HTML keepend
 \ | syntax region vuePUGTemplate matchgroup=vueTag start=/^<template.*pug.*>$/ end='</template>' contains=@PUG keepend
 \ | syntax region vueScript matchgroup=vueTag start=/^<script.*>$/ end='</script>' contains=@JS keepend
 \ | syntax region vueTSScript matchgroup=vueTag start=/^<script.*ts.*>$/ end='</script>' contains=@TS keepend
