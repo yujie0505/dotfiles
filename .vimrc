@@ -61,6 +61,9 @@ Plugin 'wavded/vim-stylus'
 "---- TypeScript
 Plugin 'leafgarland/typescript-vim'
 
+"---- YAML
+Plugin 'stephpy/vim-yaml'
+
 "--------------------------
 
 "-- Interface
