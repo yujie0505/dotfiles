@@ -95,6 +95,7 @@
   	- `zf`: create a fold
 	- `fo`: fold open
 	- `fc`: fold close
+	- `fd`: fold delete
   - cursor
     - `f<letter>` : go to next occurrence of the letter
     - `t<letter>` : go to just before the occurrence of the letter
