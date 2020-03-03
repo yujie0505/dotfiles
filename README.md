@@ -4,46 +4,104 @@
 
 ### instructions
 - useful instructions
-  - cursor
+  - motions
     - `0`  : go to the first column
     - `$`  : go to the end of line
     - `^`  : go to the first non-blank char of line
-    - `g_` : go to the last non-blank char of line
-  - delete
+  - modify
     - `x`  : delete the char under cursor
+	- `r`  : replace the char under cursor
+	- `dd` : delete a line
+	- `yy` : copy the line
+	- `p`  : paste last delete or copy
   - files
     - `:saveas <path/to/file>` : save to `<path/to/file>`
     - `:x` : save and quit
     - `ZZ` : save and quit
+    - `ZQ` : quit without saving
   - INSERT mode
     - `i`  : insert before cursor
-    - `a`  : insert after cursor
+    - `a`  : insert after cursor(append)
     - `cw` : replace from cursor to the end of the word
 - advanced instructions
   - character
-    - `gU` : uppercase
-    - `gu` : lowercase
+    - `gUU`: make the line uppercase
+    - `guu`: make the line lowercase
   - command
     - `.`  : repeat the last command
     - `<Number><command>` : repeat the command N times
     - `<start position><command><end position>`
-  - cursor
+	- `:%s/<pattern A>/<pattern B>/g` : substitude all the pattern A in file by pattern B
+	- `:g/<pattern>/<command>/` : execute command at lines that match pattern
+	- `!<command>` : execute command in shell
+	- `:sh` : go to shell. come back by `$exit`
+	- `Ctrl+n`/`Ctrl+p`: to select next/previous command
+  - motion
+    - `g0` : go to the first column of the cursor raw
+    - `g$` : go to the end of line of the cursor raw
+    - `g_` : go to the last non-blank char of line
     - `b`  : go to the start of the previous word
-    - `gE` : go to tht end of the previous word
+    - `B`  : go to the start of the previous WORD
     - `w`  : go to the start of the following word
+    - `W`  : go to the start of the following WORD
     - `e`  : go to the end of this word
+    - `E`  : go to the end of this WORD
+    - `gE` : go to tht end of the previous word
     - `%`  : go to the corresponding \(, \{, \[
     - `*`  : go to next occurrence of the word under cursor
     - `#`  : go to previous occurrence of the word under cursor
     - `<Number>G` : go to nth line
+	- `H`  : place the cursor on the top of screen
+	- `M`  : place the cursor at the middle of screen
+	- `L`  : place the cursor at the bottom of screen
+  - INSERT mode
+    - `I`  : insert from the first column
+    - `A`  : insert after the last column
+	- `o`  : open a new line below and enter insert mode
+	- `O`  : open a new line above and enter insert mode
+  - scrolling
+    - `Ctrl+d` : scroll half the screen down
+    - `Ctrl+u` : scroll half the screen up
+	- `zz`/`z.`: scroll the screen so that the cursor is in the middle of the screen
+  - autoComplete
+  	- `Ctrl+x Ctrl+f`: autocomplete for file path
+	- `Ctrl+x Ctrl+]`: autocomplete for tags(REQUIRE A TAG FILE)
+	- `Ctrl+n`/`Ctrl+p`: select next/previous option in autocomplete
+  - combine: `y`(yank), `d`(delete), `c`(change), `gu`, `gU` can all be combined with a adverb(i, a)(optional) and a motion(see above). i.g.:
+  	- `y$` : yank from the cursor to the end of line
+	- `diw`: delete the word touched by cursor
+	- `ca)`: change(delete and enter insert mode) things within \( and \)(included)
 - killer instructions
-  - command
+  - registers(macro): "
     - `qa<commands>q` : record actions in the register a
     - `@a` : replay the saved actions once (same as `@@`)
     - `<number>@@` : replay the saved actions N times
+	- `@:` : replay last command
+	- `@/` : replay last search
+	- others:
+		- `"ayy`(yank(copy) the current line and store it to register a)
+		- `"ap`(paste register a)
+  - jump:
+  	- `''` : jump to the cursor position before jumping
+	- `'"` : jump to the cursor position last exiting
+	- `Ctrl+o`: undo jumppings
+	- `Ctrl+i`: redo jumppings
+	- `Ctrl+]`: jump to definition(REQUIRE A TAG FILE)
+	- `Ctrl+t`: reverse previous jump-to-definition behavior(REQUIRE A TAG FILE)
+	- others:
+		- `ma`: mark the line with mark a
+		- `'a`: jump to mark a
+  - fold:
+  	- `zf`: create a fold
+	- `fo`: fold open
+	- `fc`: fold close
   - cursor
     - `f<letter>` : go to next occurrence of the letter
     - `t<letter>` : go to just before the occurrence of the letter
+    - `F<letter>` : go to previous occurrence of the letter
+    - `T<letter>` : go to just before the occurrence of the letter before
+	- `;`         : repeat the last f/t/F/T motion forward
+	- `,`         : repeat the last f/t/F/T motion backward
     - `<number><f/t><letter>` : go the nth occurrence of letter on this line
   - lines (selected block)
     - `J`  : join all lines together
@@ -60,6 +118,8 @@
     - `vim -d [file_left] [file_right]`
   - vim visual mode
     - `:vertical diffsplit [file_left]`
+  - compare existing windows
+	- `:windo diffthis`
 - cursor
   - `]c` : move to the next difference block
   - `[c` : move to the last difference block
@@ -72,6 +132,9 @@
   - `Ctrl-w h` : move the current window to left
   - `Ctrl-w j` : move the current window to bottom
   - `Ctrl-w l` : move the current window to right
+  - `Ctrl-w |` : maximize window in splitted vertically
+  - `Ctrl-w _` : maximize window in splitted horizontally
+  - `Ctrl-w =` : distribute space equally for opened windows
 - misc.
   - vim visual mode
     - `:diffupdate` : update difference between files
