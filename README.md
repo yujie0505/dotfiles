@@ -5,32 +5,32 @@
 ### instructions
 - useful instructions
   - motion
-    - `0`  : go to the first column
-    - `$`  : go to the end of line
-    - `^`  : go to the first non-blank char of line
+	- `0`  : go to the first column
+	- `$`  : go to the end of line
+	- `^`  : go to the first non-blank char of line
   - files
-    - `:saveas <path/to/file>` : save to `<path/to/file>`
-    - `:x` : save and quit
-    - `ZZ` : save and quit
-    - `ZQ` : quit without saving
+	- `:saveas <path/to/file>` : save to `<path/to/file>`
+	- `:x` : save and quit
+	- `ZZ` : save and quit
+	- `ZQ` : quit without saving
   - modify
-    - `x`  : delete the char under cursor
+	- `x`  : delete the char under cursor
 	- `s`  : delete the char under cursor and enter insert mode
 	- `r`  : replace the char under cursor
 	- `yy` : copy the line
 	- `p`  : paste last delete or copy
-    - `i`  : insert before cursor
-    - `a`  : insert after cursor(append)
+	- `i`  : insert before cursor
+	- `a`  : insert after cursor(append)
 	- `dw` :  delete from cursor to the end of the word
-    - `cw` : replace from cursor to the end of the word and enter insert mode
+	- `cw` : replace from cursor to the end of the word and enter insert mode
 - advanced instructions
   - character
-    - `gUU`: make the line uppercase
-    - `guu`: make the line lowercase
+	- `gUU`: make the line uppercase
+	- `guu`: make the line lowercase
   - command
-    - `.`  : repeat the last command
-    - `<Number><command>` : repeat the command N times
-    - `<start position><command><end position>`
+	- `.`  : repeat the last command
+	- `<Number><command>` : repeat the command N times
+	- `<start position><command><end position>`
 	- `!<command>` : execute command in shell
 	- `!!` : repeat last `!<command>`
 	- `/<pattern>` : search pattern
@@ -59,55 +59,55 @@
 			- `~` : previos <pattern B>
 			- `\<num> : pattern within ()
   - motion
-    - `g0` : go to the first column of the cursor raw
-    - `g$` : go to the end of line of the cursor raw
-    - `g_` : go to the last non-blank char of line
-    - `b`  : go to the start of the previous word
-    - `B`  : go to the start of the previous WORD
-    - `w`  : go to the start of the following word
-    - `W`  : go to the start of the following WORD
-    - `e`  : go to the end of this word
-    - `E`  : go to the end of this WORD
-    - `gE` : go to tht end of the previous word
-    - `%`  : go to the corresponding \(, \{, \[
-    - `*`  : go to next occurrence of the word under cursor
-    - `#`  : go to previous occurrence of the word under cursor
-    - `<Number>G` : go to nth line
+	- `g0` : go to the first column of the cursor raw
+	- `g$` : go to the end of line of the cursor raw
+	- `g_` : go to the last non-blank char of line
+	- `b`  : go to the start of the previous word
+	- `B`  : go to the start of the previous WORD
+	- `w`  : go to the start of the following word
+	- `W`  : go to the start of the following WORD
+	- `e`  : go to the end of this word
+	- `E`  : go to the end of this WORD
+	- `gE` : go to tht end of the previous word
+	- `%`  : go to the corresponding \(, \{, \[
+	- `*`  : go to next occurrence of the word under cursor
+	- `#`  : go to previous occurrence of the word under cursor
+	- `<Number>G` : go to nth line
 	- `H`  : place the cursor on the top of screen
 	- `M`  : place the cursor at the middle of screen
 	- `L`  : place the cursor at the bottom of screen
   - modify
-    - `I`  : insert from the first column
-    - `A`  : insert after the last column
+	- `I`  : insert from the first column
+	- `A`  : insert after the last column
 	- `o`  : open a new line below and enter insert mode
 	- `O`  : open a new line above and enter insert mode
 	- `R`  : enter replace mode
   - scrolling
-    - `Ctrl+d` : scroll half the screen down
-    - `Ctrl+u` : scroll half the screen up
+	- `Ctrl+d` : scroll half the screen down
+	- `Ctrl+u` : scroll half the screen up
 	- `zz`/`z.`: scroll the screen so that the cursor is in the middle of the screen
 	- `zt`/`zb`: scroll the screen so that the cursor is in the top/bottom of the screen
   - Special key(Insert mode)
-	- `Ctrl+x Ctrl+f`   : autocomplete for file path
-	- `Ctrl+x Ctrl+]`   : autocomplete for tags(REQUIRE A TAG FILE)
-	- `Ctrl+x Ctrl+i`   : autocomplete from this and included files
+	- `Ctrl+x Ctrl+f`	: autocomplete for file path
+	- `Ctrl+x Ctrl+]`	: autocomplete for tags(REQUIRE A TAG FILE)
+	- `Ctrl+x Ctrl+i`	: autocomplete from this and included files
 	- `Ctrl+n`/`Ctrl+p` : select next/previous option in autocomplete or trigger default autocomplete behavior
-	- `Ctrl+t`          : a indent of current line
-	- `Ctrl+d`          : delete a indent of current line
-	- `Ctrl+w`          : delete word before cursor
-	- `Ctrl+u`          : delete line before cursor
-	- `Ctrl+g j`        : equivalent to `<esc>ji`
-	- `Ctrl+g k`        : equivalent to `<esc>ki`
+	- `Ctrl+t`			: a indent of current line
+	- `Ctrl+d`			: delete a indent of current line
+	- `Ctrl+w`			: delete word before cursor
+	- `Ctrl+u`			: delete line before cursor
+	- `Ctrl+g j`		: equivalent to `<esc>ji`
+	- `Ctrl+g k`		: equivalent to `<esc>ki`
 	- `Ctrl+o <command>`: equivalent to `<esc><command>i`
   - combine: `y`(yank), `d`(delete), `c`(change), `gu`, `gU` can all be combined with a adverb(i, a)(optional) and a motion(see above). i.g.:
-  	- `y$` : yank from the cursor to the end of line
+	- `y$` : yank from the cursor to the end of line
 	- `diw`: delete the word touched by cursor
 	- `ca)`: change(delete and enter insert mode) things within \( and \)(included)
 - killer instructions
   - registers(macro): "
-    - `qa<commands>q` : record actions in the register a
-    - `@a` : replay the saved actions once (same as `@@`)
-    - `<number>@@` : replay the saved actions N times
+	- `qa<commands>q` : record actions in the register a
+	- `@a` : replay the saved actions once (same as `@@`)
+	- `<number>@@` : replay the saved actions N times
 	- `@:` : replay last command
 	- `@/` : replay last search
 	- INSERT mode only
@@ -118,7 +118,7 @@
 		- `"ayy`(yank(copy) the current line and store it to register a)
 		- `"ap`(paste register a)
   - jump:
-  	- `''` : jump to the cursor position before jumping
+	- `''` : jump to the cursor position before jumping
 	- `'"` : jump to the cursor position last exiting
 	- `Ctrl+o`: undo jumppings
 	- `Ctrl+i`: redo jumppings
@@ -128,33 +128,33 @@
 		- `ma`: mark the line with mark a
 		- `'a`: jump to mark a
   - fold:
-  	- `zf`: create a fold
+	- `zf`: create a fold
 	- `fo`: fold open
 	- `fc`: fold close
 	- `fd`: fold delete
   - cursor
-    - `f<letter>` : go to next occurrence of the letter
-    - `t<letter>` : go to just before the occurrence of the letter
-    - `F<letter>` : go to previous occurrence of the letter
-    - `T<letter>` : go to just before the occurrence of the letter before
-	- `;`         : repeat the last f/t/F/T motion forward
-	- `,`         : repeat the last f/t/F/T motion backward
-    - `<number><f/t><letter>` : go the nth occurrence of letter on this line
+	- `f<letter>` : go to next occurrence of the letter
+	- `t<letter>` : go to just before the occurrence of the letter
+	- `F<letter>` : go to previous occurrence of the letter
+	- `T<letter>` : go to just before the occurrence of the letter before
+	- `;`		  : repeat the last f/t/F/T motion forward
+	- `,`		  : repeat the last f/t/F/T motion backward
+	- `<number><f/t><letter>` : go the nth occurrence of letter on this line
   - lines (selected block)
-    - `J`  : join all lines together
-    - `<`  : indent to the left
-    - `>`  : indent to the right
-    - `=`  : auto indent
+	- `J`  : join all lines together
+	- `<`  : indent to the left
+	- `>`  : indent to the right
+	- `=`  : auto indent
 - ref
   - [Learn Vim Progressively](http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/)
 
 ### vimdiff
 - launch
   - bash
-    - `vimdiff [file_left] [file_right]`
-    - `vim -d [file_left] [file_right]`
+	- `vimdiff [file_left] [file_right]`
+	- `vim -d [file_left] [file_right]`
   - vim visual mode
-    - `:vertical diffsplit [file_left]`
+	- `:vertical diffsplit [file_left]`
   - compare existing windows
 	- `:windo diffthis`
 - cursor
@@ -174,8 +174,8 @@
   - `Ctrl-w =` : distribute space equally for opened windows
 - misc.
   - vim visual mode
-    - `:diffupdate` : update difference between files
-    - `:set diffopt=context:<number>` : change the number of lines of context in each difference block
+	- `:diffupdate` : update difference between files
+	- `:set diffopt=context:<number>` : change the number of lines of context in each difference block
 - ref
   - [using vimdiff](https://www.ibm.com/developerworks/cn/linux/l-vimdiff/)
 
@@ -188,12 +188,12 @@
 - push
   - `git push -u <remote name> <branch name>` : upload and track remote branch
 - semantic commits
-  - chore    : Changes to the build process or auxiliary tools and libraries such as documentation generation
-  - docs     : Documentation only changes
-  - feat     : A new feature (CHANGE LOG)
-  - fix      : A bug fix (CHANGE LOG)
+  - chore	 : Changes to the build process or auxiliary tools and libraries such as documentation generation
+  - docs	 : Documentation only changes
+  - feat	 : A new feature (CHANGE LOG)
+  - fix		 : A bug fix (CHANGE LOG)
   - refactor : A code change that neither fixes a bug or adds a feature
-  - style    : Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-  - test     : Adding missing testing
+  - style	 : Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+  - test	 : Adding missing testing
 - ref
   - [semantic git commit message](https://read01.com/Ay7dM.html)
