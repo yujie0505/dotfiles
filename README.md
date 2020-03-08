@@ -39,25 +39,24 @@
 	- `:sh` : go to shell. come back by `$exit`
 	- `Ctrl+n`/`Ctrl+p`: to select next/previous command
 	- `:%s/<pattern A>/<pattern B>/g` : substitude all the pattern A in file by pattern B
-	- `:&/<flag>` : repeat last `s/<pattern A>/<pattern B>/` with flag
-	- `:~/<flag>` : use last `/<pattern>` as pattern A and last `:s` pattern B with flag
+	- `:&<flag>` : repeat last `s/<pattern A>/<pattern B>/` with flag
+	- `:~<flag>` : use last `/<pattern>` as pattern A and last `:s` pattern B with flag
 	- `:g/<pattern>/<command>/` : execute command at lines that match pattern
 	- notes:
-		- <pattern>
-		- <offset>:
+		- `<offset>`:
 			- +-n: move n lines
 			- b+-n: n char from begin of word
 			- e+-n: n char from end of word
-		- <flag>:
+		- `<flag>`:
 			- `g` : apply to all matches
 			- `&` : use previous flag
 			- `c` : comfirm needed
 			- `i` : ignore case
 			- `I` : don't ignore case
-		- replace string(<pattern B>):
-			- `&` : <pattern A>
-			- `~` : previos <pattern B>
-			- `\<num> : pattern within ()
+		- replace string(`<pattern B>`):
+			- `&` : `<pattern A>`
+			- `~` : previos `<pattern B>`
+			- `\<num>` : pattern within ()
   - motion
 	- `g0` : go to the first column of the cursor raw
 	- `g$` : go to the end of line of the cursor raw
