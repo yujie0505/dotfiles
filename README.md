@@ -4,25 +4,25 @@
 
 ### instructions
 - useful instructions
-  - motions
+  - motion
     - `0`  : go to the first column
     - `$`  : go to the end of line
     - `^`  : go to the first non-blank char of line
-  - modify
-    - `x`  : delete the char under cursor
-	- `r`  : replace the char under cursor
-	- `dd` : delete a line
-	- `yy` : copy the line
-	- `p`  : paste last delete or copy
   - files
     - `:saveas <path/to/file>` : save to `<path/to/file>`
     - `:x` : save and quit
     - `ZZ` : save and quit
     - `ZQ` : quit without saving
-  - INSERT mode
+  - modify
+    - `x`  : delete the char under cursor
+	- `s`  : delete the char under cursor and enter insert mode
+	- `r`  : replace the char under cursor
+	- `yy` : copy the line
+	- `p`  : paste last delete or copy
     - `i`  : insert before cursor
     - `a`  : insert after cursor(append)
-    - `cw` : replace from cursor to the end of the word
+	- `dw` :  delete from cursor to the end of the word
+    - `cw` : replace from cursor to the end of the word and enter insert mode
 - advanced instructions
   - character
     - `gUU`: make the line uppercase
@@ -31,11 +31,33 @@
     - `.`  : repeat the last command
     - `<Number><command>` : repeat the command N times
     - `<start position><command><end position>`
-	- `:%s/<pattern A>/<pattern B>/g` : substitude all the pattern A in file by pattern B
-	- `:g/<pattern>/<command>/` : execute command at lines that match pattern
 	- `!<command>` : execute command in shell
+	- `!!` : repeat last `!<command>`
+	- `/<pattern>` : search pattern
+	- `/<pattern>/<offset>` : search pattern and place cursor on offset
+	- `//` : repeat last `/<pattern>`
 	- `:sh` : go to shell. come back by `$exit`
 	- `Ctrl+n`/`Ctrl+p`: to select next/previous command
+	- `:%s/<pattern A>/<pattern B>/g` : substitude all the pattern A in file by pattern B
+	- `:&/<flag>` : repeat last `s/<pattern A>/<pattern B>/` with flag
+	- `:~/<flag>` : use last `/<pattern>` as pattern A and last `:s` pattern B with flag
+	- `:g/<pattern>/<command>/` : execute command at lines that match pattern
+	- notes:
+		- <pattern>
+		- <offset>:
+			- +-n: move n lines
+			- b+-n: n char from begin of word
+			- e+-n: n char from end of word
+		- <flag>:
+			- `g` : apply to all matches
+			- `&` : use previous flag
+			- `c` : comfirm needed
+			- `i` : ignore case
+			- `I` : don't ignore case
+		- replace string(<pattern B>):
+			- `&` : <pattern A>
+			- `~` : previos <pattern B>
+			- `\<num> : pattern within ()
   - motion
     - `g0` : go to the first column of the cursor raw
     - `g$` : go to the end of line of the cursor raw
@@ -54,19 +76,29 @@
 	- `H`  : place the cursor on the top of screen
 	- `M`  : place the cursor at the middle of screen
 	- `L`  : place the cursor at the bottom of screen
-  - INSERT mode
+  - modify
     - `I`  : insert from the first column
     - `A`  : insert after the last column
 	- `o`  : open a new line below and enter insert mode
 	- `O`  : open a new line above and enter insert mode
+	- `R`  : enter replace mode
   - scrolling
     - `Ctrl+d` : scroll half the screen down
     - `Ctrl+u` : scroll half the screen up
 	- `zz`/`z.`: scroll the screen so that the cursor is in the middle of the screen
-  - autoComplete
-  	- `Ctrl+x Ctrl+f`: autocomplete for file path
-	- `Ctrl+x Ctrl+]`: autocomplete for tags(REQUIRE A TAG FILE)
-	- `Ctrl+n`/`Ctrl+p`: select next/previous option in autocomplete
+	- `zt`/`zb`: scroll the screen so that the cursor is in the top/bottom of the screen
+  - Special key(Insert mode)
+	- `Ctrl+x Ctrl+f`   : autocomplete for file path
+	- `Ctrl+x Ctrl+]`   : autocomplete for tags(REQUIRE A TAG FILE)
+	- `Ctrl+x Ctrl+i`   : autocomplete from this and included files
+	- `Ctrl+n`/`Ctrl+p` : select next/previous option in autocomplete or trigger default autocomplete behavior
+	- `Ctrl+t`          : a indent of current line
+	- `Ctrl+d`          : delete a indent of current line
+	- `Ctrl+w`          : delete word before cursor
+	- `Ctrl+u`          : delete line before cursor
+	- `Ctrl+g j`        : equivalent to `<esc>ji`
+	- `Ctrl+g k`        : equivalent to `<esc>ki`
+	- `Ctrl+o <command>`: equivalent to `<esc><command>i`
   - combine: `y`(yank), `d`(delete), `c`(change), `gu`, `gU` can all be combined with a adverb(i, a)(optional) and a motion(see above). i.g.:
   	- `y$` : yank from the cursor to the end of line
 	- `diw`: delete the word touched by cursor
@@ -78,6 +110,10 @@
     - `<number>@@` : replay the saved actions N times
 	- `@:` : replay last command
 	- `@/` : replay last search
+	- INSERT mode only
+		- `Ctrl-r <register>`: insert from <register>
+		- `Ctrl-a`: insert last text(equivalent to `^r.`)
+		- `Ctrl-@`: insert last text and leave insert mode(equivalent to `^a<esc>`)
 	- others:
 		- `"ayy`(yank(copy) the current line and store it to register a)
 		- `"ap`(paste register a)
