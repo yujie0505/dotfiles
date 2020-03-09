@@ -125,6 +125,7 @@ press \<enter> after typing
 * `Ctrl+t`			: add a indent to current line
 * `Ctrl+d`			: remove a indent of current line
 * `Ctrl+w`			: delete word before cursor
+* `Ctrl+u`			: delete line before cursor
 ##### -------------nerds--------------
 * `Ctrl+g j`		: equivalent to `<ESC>ji`
 * `Ctrl+g k`		: equivalent to `<ESC>ki`
@@ -180,7 +181,7 @@ Advanced or above
 * `zd`: fold delete
 * `zR`: open all
 * `zM`: close all
-6. Visual block: Edit multiple lines at the same time
+##### Visual block: Edit multiple lines at the same time
 * step1: press `Ctrl+v`
 * step2: select multiple lines as if in visual mode
 * step3: edit ONLY the first line
