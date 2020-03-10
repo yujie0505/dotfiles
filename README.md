@@ -64,7 +64,7 @@
 * **Dark Magic**:
 	* combine `<num><change>`: Repeat [change](#change) num of times.
 	* combine `<change><adjective><position>`: For reduplicated [change](#change) marked with \*(i.g. `y`, `>`, `gU`, etc.), apply [change](#change) from cursor to position.
-		* \<adjective>(optional): `i`: in, `a`: all, <num>: repeat
+		* \<adjective>(optional): `i`: in, `a`: all, \<num>: repeat
 		* \<position>: [motion](#motion) or \<num>\<motion> or {, [, (, ), ], }
 	* examples:
 		- `y$` : yank from the cursor to the end of line
