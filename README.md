@@ -190,6 +190,7 @@ Advanced or above
 #### ref
 * vim :help motion, insert, scroll, change, fold, reg, mark, ctrl-v, windows, i\_ctrl-n, etc.
 * [vim tips](https://vim.fandom.com/wiki/Vim_Tips_Wiki)
+* [Learn Vim Progressively](http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/)
 
 ### vimdiff
 
