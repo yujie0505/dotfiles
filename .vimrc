@@ -137,6 +137,9 @@ syntax enable
 "-- vim-markdown
 let g:vim_markdown_folding_disabled = 1
 
+"-- vim-node
+autocmd User Node if "javascript" == &filetype | nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile | endif
+
 "------------------------general setting----------------------------
 
 syntax on
