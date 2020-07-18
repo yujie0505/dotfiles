@@ -15,32 +15,14 @@ Plugin 'VundleVim/Vundle.vim'
 
 "-- Language
 
-"---- CSS
-Plugin 'hail2u/vim-css3-syntax'
-
-"---- Docker
-Plugin 'ekalinin/dockerfile.vim'
-
 "---- Golang
 Plugin 'fatih/vim-go'
-
-"---- HTML
-Plugin 'othree/html5.vim'
-
-"---- JavaScript
-Plugin 'pangloss/vim-javascript'
 
 "---- LiveScript
 Plugin 'gkz/vim-ls'
 
-"---- Markdown
-Plugin 'plasticboy/vim-markdown'
-
 "---- Nodejs
 Plugin 'moll/vim-node'
-
-"---- Perl
-Plugin 'vim-perl/vim-perl'
 
 "---- Pug
 Plugin 'digitaltoad/vim-jade'
@@ -55,21 +37,12 @@ Plugin 'tpope/vim-haml'
 "---- Solidity
 Plugin 'tomlion/vim-solidity'
 
-"---- Stylus
-Plugin 'wavded/vim-stylus'
-
 "---- TypeScript
 Plugin 'leafgarland/typescript-vim'
-
-"---- YAML
-Plugin 'stephpy/vim-yaml'
 
 "--------------------------
 
 "-- Interface
-
-"---- colorscheme
-Plugin 'altercation/vim-colors-solarized'
 
 "---- cursor
 Plugin 'miyakogi/conoline.vim'
@@ -91,8 +64,8 @@ Plugin 'mileszs/ack.vim'
 "---- aligning text
 Plugin 'godlygeek/tabular'
 
-"---- language server protocol (https://github.com/neoclide/coc.nvim)
-Plugin 'neoclide/coc.nvim'
+"---- language server protocol client
+Plugin 'dense-analysis/ale'
 
 "--------------------------
 
@@ -108,9 +81,6 @@ filetype plugin on  " required
 "---- ack
 let g:ackprg='ag --vimgrep'
 
-"-- coc-prettier
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
 "-- conoline
 let g:conoline_auto_enable=1
 
@@ -118,24 +88,11 @@ let g:conoline_auto_enable=1
 let python_highlight_all=1
 
 "-- vim-airline
-let g:airline_powerline_fonts=1                     " enable powerline fonts
-let g:airline_section_c='%t'
-let g:airline_theme='solarized'
-let g:airline#extensions#tabline#enabled=1          " enable tabline
-let g:airline#extensions#tabline#left_alt_sep='|'   " set left separator which are not editing
-let g:airline#extensions#tabline#left_sep=' '       " set left separator
-let g:airline#extensions#whitespace#enabled=0
+let g:airline_powerline_fonts=1
+let g:airline_theme='sol'
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#formatter='default'
 set laststatus=2                                    " set status line
-
-"-- vim-colors-solarized
-colorscheme darkblue
-let g:solarized_contrast='low'
-let g:solarized_termcolors=256
-set background=dark
-syntax enable
-
-"-- vim-markdown
-let g:vim_markdown_folding_disabled = 1
 
 "-- vim-node
 autocmd User Node if "javascript" == &filetype | nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile | endif
