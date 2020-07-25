@@ -84,7 +84,8 @@ let g:ackprg='ag --vimgrep'
 "-- ale (language server protocol client)
 let g:ale_fix_on_save=1
 let g:ale_fixers={
-\ '*': ['prettier']
+\ '*': ['prettier'],
+\ 'json': ['fixjson']
 \ }
 let g:ale_linters_explicit=1
 
