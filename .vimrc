@@ -78,8 +78,15 @@ filetype plugin on  " required
 
 "------------------------plugins setting----------------------------
 
-"---- ack
+"-- ack
 let g:ackprg='ag --vimgrep'
+
+"-- ale (language server protocol client)
+let g:ale_fix_on_save=1
+let g:ale_fixers={
+\ '*': ['prettier']
+\ }
+let g:ale_linters_explicit=1
 
 "-- conoline
 let g:conoline_auto_enable=1
