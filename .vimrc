@@ -87,6 +87,9 @@ let g:ale_fixers={
 \ '*': ['prettier'],
 \ 'json': ['fixjson']
 \ }
+let g:ale_linters={
+\ 'typescript': ['tsserver']
+\ }
 let g:ale_linters_explicit=1
 
 "-- conoline
