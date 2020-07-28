@@ -18,6 +18,9 @@ Plugin 'VundleVim/Vundle.vim'
 "---- Golang
 Plugin 'fatih/vim-go'
 
+"---- JavaScript
+Plugin 'pangloss/vim-javascript'
+
 "---- LiveScript
 Plugin 'gkz/vim-ls'
 
