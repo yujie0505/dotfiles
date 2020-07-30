@@ -45,6 +45,13 @@ Plugin 'leafgarland/typescript-vim'
 
 "--------------------------
 
+"-- Integrations
+
+"---- JSDoc
+Plugin 'heavenshell/vim-jsdoc'
+
+"--------------------------
+
 "-- Interface
 
 "---- cursor
