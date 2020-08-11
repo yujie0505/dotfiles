@@ -79,6 +79,7 @@ plugins=(docker git helm kubectl)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
+source $HOME/.profile
 
 # User configuration
 
