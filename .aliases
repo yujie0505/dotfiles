@@ -11,7 +11,7 @@ alias yarnb='yarn build'
 alias yarns='yarn start'
 alias yarnw='yarn watch'
 
-cd() { builtin cd "$@"; ls; }
+cd() { builtin cd "$@"; ls; check_venv; }
 
 alias ..="cd ../"
 alias ...="cd ../../"
@@ -19,7 +19,24 @@ alias ....="cd ../../../"
 
 rrm() { /bin/rm -i "$@"; }
 
-# Helper function
+# Helper functions
+
+function check_venv {
+  unset PROJECT_NAME
+
+  VENV_HOME="$HOME/.venv"
+
+  GIT_DIR=`git rev-parse --absolute-git-dir 2> /dev/null`
+  if [ $GIT_DIR ]; then
+    PROJECT_NAME=`dirname $GIT_DIR | xargs basename`
+  fi
+
+  if [ $PROJECT_NAME ] && [ "$VIRTUAL_ENV" != "$VENV_HOME/$PROJECT_NAME" ] && [ -e "$VENV_HOME/$PROJECT_NAME/bin/activate" ]; then
+    . $VENV_HOME/$PROJECT_NAME/bin/activate && export ACTIVATED_VENV="$PROJECT_NAME"
+  elif [ "$ACTIVATED_VENV" != "$PROJECT_NAME" ]; then
+    deactivate && unset ACTIVATED_VENV
+  fi
+}
 
 function _rm() {
 while [ $# -ge 1 ]; do
