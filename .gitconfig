@@ -7,6 +7,8 @@
 	s = status -s
 [color]
 	ui = true
+[core]
+  editor=vim
 [push]
 	default = simple
 [user]
