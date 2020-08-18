@@ -1,16 +1,13 @@
 [alias]
-	a = add
-	ci = commit -m
-	co = checkout
+  a = add
+  ci = commit -m
+  co = checkout
   gr = log --date=short --graph --pretty=format:"%C(yellow)%h%Creset %ad %C(bold green)%an%Creset %s%C(yellow)%d%Creset"
-	l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
-	s = status -s
+  l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
+  s = status -s
 [color]
-	ui = true
+  ui = true
 [core]
-  editor=vim
+  editor = vim
 [push]
-	default = simple
-[user]
-	email =
-	name =
+  default = simple
