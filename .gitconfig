@@ -2,8 +2,7 @@
   a = add
   ci = commit -m
   co = checkout
-  gr = log --date=short --graph --pretty=format:"%C(yellow)%h%Creset %ad %C(bold green)%an%Creset %s%C(yellow)%d%Creset"
-  l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=short
+  l = log --date=short --decorate --pretty=format:"%C(yellow)%h%Creset\\ %ad%C(auto)%d%Creset\\ %C(bold)%C(black)%an%Creset\\ %s"
   s = status -s
 [color]
   ui = true
