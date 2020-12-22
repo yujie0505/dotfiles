@@ -8,7 +8,7 @@ alias tx='tmux attach'
 alias txn='tmux new -s'
 alias vi='vim'
 alias yarnb='yarn build'
-alias yarns='yarn start'
+alias yarns='yarn serve'
 alias yarnw='yarn watch'
 
 cd() { builtin cd "$@"; ls; check_venv; }
