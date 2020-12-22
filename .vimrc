@@ -155,6 +155,7 @@ nnoremap <silent> +	:wincmd +<CR>
 nnoremap <silent> -	:wincmd -<CR>
 nnoremap <silent> <	:wincmd <<CR>
 nnoremap <silent> >	:wincmd ><CR>
+nnoremap <silent> <C-x><C-f> :ALEGoToDefinition<CR>
 
 "----------------------vue syntax highlight-------------------------
 
