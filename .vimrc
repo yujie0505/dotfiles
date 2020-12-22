@@ -96,7 +96,7 @@ let g:ale_fix_on_save=1
 let g:ale_fixers={
 \ '*': ['prettier'],
 \ 'json': ['fixjson'],
-\ 'python': ['autopep8']
+\ 'python': ['isort', 'autopep8']
 \ }
 let g:ale_linters={
 \ 'typescript': ['tsserver'],
