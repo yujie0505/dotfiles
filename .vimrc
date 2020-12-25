@@ -1,90 +1,80 @@
-"---------------------------Vundle----------------------------------
+"--------------------------vim-plug---------------------------------
 
-" Vundle tutorial on github: https://github.com/VundleVim/Vundle.vim
-set nocompatible    " be iMproved, required
-filetype off        " required
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+"-------------------------vim plugins-------------------------------
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-"-----------------------Vundle plugins------------------------------
+call plug#begin('~/.vim/plugged')
 
 "-- Language
 
 "---- Golang
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go'
 
 "---- JavaScript
-Plugin 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 
 "---- LiveScript
-Plugin 'gkz/vim-ls'
+Plug 'gkz/vim-ls'
 
 "---- Nodejs
-Plugin 'moll/vim-node'
+Plug 'moll/vim-node'
 
 "---- Pug
-Plugin 'digitaltoad/vim-jade'
+Plug 'digitaltoad/vim-jade'
 
 "---- Python
-Plugin 'hdima/python-syntax'
-Plugin 'hynek/vim-python-pep8-indent'
+Plug 'hdima/python-syntax'
+Plug 'hynek/vim-python-pep8-indent'
 
 "---- Sass
-Plugin 'tpope/vim-haml'
+Plug 'tpope/vim-haml'
 
 "---- Solidity
-Plugin 'tomlion/vim-solidity'
+Plug 'tomlion/vim-solidity'
 
 "---- TypeScript
-Plugin 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
 
 "--------------------------
 
 "-- Integrations
 
 "---- JSDoc
-Plugin 'heavenshell/vim-jsdoc'
+Plug 'heavenshell/vim-jsdoc'
 
 "--------------------------
 
 "-- Interface
 
 "---- cursor
-Plugin 'miyakogi/conoline.vim'
+Plug 'miyakogi/conoline.vim'
 
 "---- git diff
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 "---- status line
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 "--------------------------
 
 "-- Others
 
 "---- ack
-Plugin 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 
 "---- aligning text
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 
 "---- language server protocol client
-Plugin 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
-"--------------------------
-
-" All of your Plugins must be added before the following line
-
-"-------------------------------------------------------------------
-
-call vundle#end()   " required
-filetype plugin on  " required
+call plug#end()
 
 "------------------------plugins setting----------------------------
 
