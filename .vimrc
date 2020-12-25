@@ -99,6 +99,7 @@ let g:ale_fixers={
 \ 'python': ['isort', 'autopep8']
 \ }
 let g:ale_linters={
+\ 'javascript': ['tsserver'],
 \ 'typescript': ['tsserver'],
 \ 'vue': ['vls']
 \ }
