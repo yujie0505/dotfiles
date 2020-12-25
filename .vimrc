@@ -13,39 +13,36 @@ call plug#begin('~/.vim/plugged')
 "-- Language
 
 "---- Golang
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'for': 'go' }
 
 "---- JavaScript
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', { 'for': 'js' }
 
 "---- LiveScript
-Plug 'gkz/vim-ls'
-
-"---- Nodejs
-Plug 'moll/vim-node'
+Plug 'gkz/vim-ls', { 'for': 'ls' }
 
 "---- Pug
-Plug 'digitaltoad/vim-jade'
+Plug 'digitaltoad/vim-jade', { 'for': 'pug' }
 
 "---- Python
-Plug 'hdima/python-syntax'
-Plug 'hynek/vim-python-pep8-indent'
+Plug 'hdima/python-syntax', { 'for': 'py' }
+Plug 'hynek/vim-python-pep8-indent', { 'for': 'py' }
 
 "---- Sass
-Plug 'tpope/vim-haml'
+Plug 'tpope/vim-haml', { 'for': ['sass', 'scss'] }
 
 "---- Solidity
-Plug 'tomlion/vim-solidity'
+Plug 'tomlion/vim-solidity', { 'for': 'sol' }
 
 "---- TypeScript
-Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim', { 'for': 'ts' }
 
 "--------------------------
 
 "-- Integrations
 
 "---- JSDoc
-Plug 'heavenshell/vim-jsdoc'
+Plug 'heavenshell/vim-jsdoc', { 'for': 'js' }
 
 "--------------------------
 
