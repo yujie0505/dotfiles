@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(docker git helm heroku kubectl pip)
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.aliases
+source $HOME/.bash_aliases
 source $HOME/.profile
 
 # User configuration
