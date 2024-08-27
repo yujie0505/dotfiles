@@ -1,10 +1,11 @@
+# TODO: modify variable `VENV_HOMES` to specify multiple paths containing virtual environments, with each path separated by a `:`
+VENV_HOMES="$HOME/.venv:$HOME/tmp/venv"
+
 function cd {
-	builtin cd "$@"
+	builtin cd "$@" || return 1
 	ls
 
 	# Activate virtual environment
-
-	VENV_HOME="$HOME/.venv"
 
 	unset NEW_VIRTUAL_ENV
 	CURRENT_DIR=$(pwd)
@@ -15,7 +16,7 @@ function cd {
 		elif [ -f "$CURRENT_DIR/.venv" ]; then
 			NEW_VIRTUAL_ENV="$VENV_HOME/$(cat $CURRENT_DIR/.venv)"
 			if [ ! -f "$NEW_VIRTUAL_ENV/pyvenv.cfg" ]; then
-				echo "The virtual environment configuration at the specified path is invalid. Please verify the contents of the .venv file."
+				echo "The virtual environment configuration at the specified path is invalid. Please verify the contents of the $CURRENT_DIR/.venv file."
 				return 1
 			fi
 		fi
