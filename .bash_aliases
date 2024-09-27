@@ -20,6 +20,7 @@ function cd {
     IFS="$delimiter" read -r -a venv_homes <<<"$VENV_HOMES"
   fi
 
+  # TODO: auto-detect virtual environment name from command `poetry env info --path`
   while [ "$(expr "//$current_dir" : "//$HOME")" -gt 0 ]; do
     # Comply with PEP 405 – Python Virtual Environments (https://peps.python.org/pep-0405/)
     if [ -d "$current_dir/.venv" ] && [ -f "$current_dir/.venv/pyvenv.cfg" ]; then
